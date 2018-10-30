@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ -z "$1" ]; then
+  echo "Usage: stp 2 \"echo 'Hello'\" (print Hello in pane 2)"
+  exit
+fi
+
 osascript <<END
 tell application "iTerm"
   tell session $1 of current tab of current window to write text "$2"
