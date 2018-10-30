@@ -7,6 +7,6 @@ fi
 
 osascript <<END
 tell application "iTerm"
-  tell session $1 of current tab of current window to write text "$2"
+  tell session $1 of current tab of current window to write text "${@:2}"
 end tell
 END
